@@ -130,6 +130,14 @@
         <div class="row">
             <div class="col-md-12">
                 <p>Copyright © <a href="http://fazero.cc" target="_blank">FAZERO</a> 2016</p>
+                <p id="showDays"></p>
+					<script>
+					var birthDay = new Date("02/01/2016");  
+					var now = new Date();
+					var duration = now.getTime() - birthDay.getTime(); 
+					var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+					document.getElementById("showDays").innerHTML = "本站已提供服务"+total+"天"; 
+					</script>
             </div>
         </div>
     </div>

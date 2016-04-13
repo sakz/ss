@@ -124,11 +124,7 @@
             ds.charset = 'UTF-8';
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
         })();
-        var buy = document.getElementById('buy');
-        buy.style.color = "red";
-        buy.onclick = function() {
-        	alert("需要购买稳定ss联系me@fazero.cc 美国节点 20元一年");
-        };
+        
         </script>
         <!-- 多说公共JS代码 end -->
     </div>
@@ -152,7 +148,23 @@
     document.write(unescape("%3Cspan id='cnzz_stat_icon_1257407535'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1257407535%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
     </script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <!--<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>-->
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $.get('https://jsonp.afeld.me/?url=http%3A%2F%2Fcn.bing.com%2FHPImageArchive.aspx%3Fformat%3Djs%26idx%3D0%26n%3D1', function(data){
+            var a = data.images[0].url;
+            document.body.style.backgroundImage = "url(" + a + ")";
+            document.body.style.color = "#fff";
+            $('.title h6 a').css({
+                color: "#fff",
+                
+            }); 
+            var buy = document.getElementById('buy');
+                buy.style.color = "red";
+                buy.onclick = function() {
+                alert("需要购买稳定ss联系me@fazero.cc 美国节点 20元一年");
+        };
+    });
+    </script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <!--<script src="js/bootstrap.min.js"></script>-->
 </body>

@@ -153,30 +153,33 @@
     //     $.get('https://jsonp.afeld.me/?url=http%3A%2F%2Fcn.bing.com%2FHPImageArchive.aspx%3Fformat%3Djs%26idx%3D0%26n%3D1', function(data){
     //         var a = data.images[0].url;
     //         document.body.style.backgroundImage = "url(" + a + ")";
-    //         document.body.style.backgroundSize = "100%";
-    //         document.body.style.color = "#fff";
+    //         document.body.style.backgroundSize = "cover";
+    //         document.body.style.color = "#fff";            
+    // });
+    //     window.onload = function(){
     //         $('.title h6 a').css({
     //             color: "#fff",
                 
     //         }); 
-            
-    //     };
-    // });
-    // 
+    //     }
+    
     $(document).ready(function(){
         document.body.style.backgroundImage = "url(" + "https://source.unsplash.com/category/nature/1920x1080" + ")";
         document.body.style.backgroundSize = "cover";
-        document.body.style.color = "#fff";
-            $('.title h6 a').css({
-                 color: "#fff",
-                
-             });
             var buy = document.getElementById('buy');
                 buy.style.color = "red";
                 buy.onclick = function() {
                 alert("需要购买稳定ss联系me@fazero.cc 美国节点 20元一年");
             }
         });
+    window.onload = function(){
+            $('.title h6 a').css({
+                color: "#fff",
+                
+            }); 
+        document.body.style.color = "#fff";
+            
+        }
      
     </script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

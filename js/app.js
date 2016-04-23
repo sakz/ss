@@ -55,4 +55,5 @@ function showqr(ss) {
     console.log(child)
     if (child) { parentNode.removeChild(child) };
     $('#qrcode').qrcode(ssqr);
+    document.getElementById('tip').style.display = "block";
 }

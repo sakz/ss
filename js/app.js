@@ -2,7 +2,8 @@ function getBingImg(){
     $.get('https://jsonp.afeld.me/?url=http%3A%2F%2Fcn.bing.com%2FHPImageArchive.aspx%3Fformat%3Djs%26idx%3D0%26n%3D1', function(data){
         var a = data.images[0].url;
         document.body.style.backgroundImage = "url(" + a + ")";
-        document.body.style.backgroundSize = "cover";           
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundPosition = "center";          
     });
 }
 

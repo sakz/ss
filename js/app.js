@@ -1,12 +1,3 @@
-function getBingImg(){
-    $.get('https://jsonp.afeld.me/?url=http%3A%2F%2Fcn.bing.com%2FHPImageArchive.aspx%3Fformat%3Djs%26idx%3D0%26n%3D1', function(data){
-        var a = data.images[0].url;
-        document.body.style.backgroundImage = "url(" + a + ")";
-        document.body.style.backgroundSize = "cover";
-        document.body.style.backgroundPosition = "center";          
-    });
-}
-
 function buyMsg() {
     var buy = document.getElementById('buy');
     buy.style.color = "red";
@@ -59,9 +50,24 @@ function showqr() {
     document.getElementById('tip').style.display = "block";
 }
 
+function getBingImg() {
+    $.get('https://jsonp.afeld.me/?url=http%3A%2F%2Fcn.bing.com%2FHPImageArchive.aspx%3Fformat%3Djs%26idx%3D0%26n%3D1', function(data) {
+        var a = data.images[0].url;
+        document.body.style.backgroundImage = "url(" + a + ")";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundPosition = "center";
+
+        var img = new Image();
+        img.src = a;
+        img.onload = function() {
+            console.log("加载好了");
+            changeColor();
+            buyMsg();
+        }
+    });
+}
 $(document).ready(function($) {
     showtime();
-    // changeBg();
     getBingImg();
     var qr = document.getElementsByClassName('show-qr');
     for (var i = 0; i < qr.length; i++) {
@@ -70,6 +76,6 @@ $(document).ready(function($) {
 });
 
 window.onload = function() {
-    changeColor();
-    buyMsg();
+    // changeColor();
+    // buyMsg();
 };

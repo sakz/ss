@@ -39,3 +39,8 @@
 h6{
     font-weight: bold;
 }
+.tips{
+    color: #fff;
+    /*text-shadow:0 0 3px #0D84E2;*/
+    font-size: 16px;
+}

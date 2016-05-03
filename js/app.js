@@ -2,7 +2,13 @@ function buyMsg() {
     var buy = document.getElementById('buy');
     buy.style.color = "red";
     buy.onclick = function() {
-        alert("需要购买稳定ss联系me@fazero.cc 美国节点 20元一年");
+        swal({
+            title: "需要购买稳定ss<br>联系me@fazero.cc <br>美国节点 20元一年",
+            // text: "需要购买稳定ss<br>联系me@fazero.cc <br>美国节点 20元一年",
+            html: true,
+            type: "success"
+            });
+
     }
 }
 

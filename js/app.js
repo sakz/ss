@@ -69,6 +69,7 @@ function getBingImg() {
             console.log("加载好了");
             changeColor();
             buyMsg();
+            downImg();
         }
     });
 }
@@ -80,7 +81,12 @@ $(document).ready(function($) {
         qr[i].onclick = showqr;
     }
 });
-
+function downImg(){
+    var img = document.body.style.backgroundImage;
+    var re = /http.*jpg/;
+    var imgurl = re.exec(img)[0];
+    var href = $('.tips a').attr('href',imgurl);
+}
 window.onload = function() {
     // changeColor();
     // buyMsg();

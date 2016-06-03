@@ -86,6 +86,7 @@ function downImg(){
     var re = /http.*jpg/;
     var imgurl = re.exec(img)[0];
     var href = $('.tips a').attr('href',imgurl);
+    var down = $('.tips a').attr('download',imgurl);
 }
 window.onload = function() {
     // changeColor();

@@ -3,7 +3,7 @@ function buyMsg() {
     buy.style.color = "red";
     buy.onclick = function() {
         swal({
-            title: "需要购买稳定ss<br>联系me@fazero.cc <br>美国节点 20元一年<br>高速视频节点 6元一个月",
+            title: "需要购买稳定ss<br>联系me@fazero.cc <br>美国节点 20元一年",
             // text: "需要购买稳定ss<br>联系me@fazero.cc <br>美国节点 20元一年",
             html: true,
             type: "success"

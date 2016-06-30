@@ -11,7 +11,16 @@ function buyMsg() {
 
     }
 }
-
+function tips() {
+    $(".tips").click(function() {
+        swal({
+            title: "使用须知",
+            text: "1.本站账号仅限于Google等学习查阅资料用途<br>2.禁止BT下载等滥用行为<br>3.免费资源，且用且珍惜",
+            html: true,
+            type: "success"
+        });
+    })
+}
 function changeColor() {
     $('.title h6 a').css({
         color: "#fff",
@@ -59,6 +68,8 @@ function showqr() {
 function getBingImg() {
     $.get('https://jsonp.afeld.me/?url=http%3A%2F%2Fcn.bing.com%2FHPImageArchive.aspx%3Fformat%3Djs%26idx%3D0%26n%3D1', function(data) {
         var a = data.images[0].url;
+        // var a = "http://img.ph.126.net/09Bqwm15SmWv4-B6Avxo4Q==/5629512728352671413.png";
+        var a = 'http://ww2.sinaimg.cn/large/8b953c4agw1f5dj77i1i6j21hc0u0q50.jpg';
         document.body.style.backgroundImage = "url(" + a + ")";
         document.body.style.backgroundSize = "cover";
         document.body.style.backgroundPosition = "center";
@@ -69,7 +80,8 @@ function getBingImg() {
             console.log("加载好了");
             changeColor();
             buyMsg();
-            downImg();
+            tips();
+            // downImg();
         }
     });
 }

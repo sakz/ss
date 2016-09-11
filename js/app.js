@@ -20,6 +20,7 @@ function tips() {
             type: "success"
         });
     })
+    console.log('使用须知');
 }
 function changeColor() {
     $('.title h6 a').css({
@@ -79,7 +80,7 @@ function getBingImg() {
         img.onload = function() {
             console.log("加载好了");
             changeColor();
-            buyMsg();
+            // buyMsg();
             tips();
             // downImg();
         }

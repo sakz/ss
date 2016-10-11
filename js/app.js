@@ -101,7 +101,18 @@ function downImg(){
     var href = $('.tips a').attr('href',imgurl);
     var down = $('.tips a').attr('download',imgurl);
 }
+function freess(){
+    setTimeout(function(){
+        swal({
+            title: "免费ss站",
+            text: "地址：http://ss.freessr.cf/code",
+            // html: true,
+            type: "success"
+        });
+    },5000)
+}
 window.onload = function() {
     // changeColor();
     // buyMsg();
+    freess();
 };

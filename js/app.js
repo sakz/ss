@@ -104,15 +104,15 @@ function downImg(){
 function freess(){
     setTimeout(function(){
         swal({
-            title: "免费ss站",
-            text: "地址：http://ss.freessr.cf/code",
+            title: "吾皇SS提供稳定低价SS服务",
+            text: "地址：http://kingss.win",
             // html: true,
             type: "success"
         });
-    },5000)
+    },3000)
 }
 window.onload = function() {
     // changeColor();
     // buyMsg();
-    // freess();
+    freess();
 };

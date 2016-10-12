@@ -114,5 +114,5 @@ function freess(){
 window.onload = function() {
     // changeColor();
     // buyMsg();
-    freess();
+    // freess();
 };

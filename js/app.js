@@ -104,15 +104,26 @@ function downImg(){
 function freess(){
     setTimeout(function(){
         swal({
-            title: "吾皇SS提供稳定低价SS服务",
-            text: "地址：http://kingss.win",
+            title: "吾皇SS提供稳定低价SS服务<br>地址：http://kingss.win",
+            // text: "地址：http://kingss.win",
+            html: true,
+            type: "success"
+        });
+    },5000)
+}
+function newdomain(){
+    setTimeout(function(){
+        swal({
+            title: "请记住本站的域名http://freessr.top",
+            text: "旧的地址已弃用",
             // html: true,
             type: "success"
         });
-    },3000)
+    },500)
 }
 window.onload = function() {
     // changeColor();
     // buyMsg();
+    newdomain();
     freess();
 };

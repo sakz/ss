@@ -105,11 +105,11 @@ function freess(){
     setTimeout(function(){
         swal({
             title: "吾皇SS提供稳定低价SS服务<br>地址：http://kingss.win",
-            // text: "地址：http://kingss.win",
+            text: "请记住本站的域名http://freessr.top，旧的地址已弃用",
             html: true,
             type: "success"
         });
-    },5000)
+    },3000)
 }
 function newdomain(){
     setTimeout(function(){
@@ -124,6 +124,6 @@ function newdomain(){
 window.onload = function() {
     // changeColor();
     // buyMsg();
-    newdomain();
+    // newdomain();
     freess();
 };

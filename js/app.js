@@ -125,5 +125,5 @@ window.onload = function() {
     // changeColor();
     // buyMsg();
     // newdomain();
-    freess();
+    // freess();
 };

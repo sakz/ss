@@ -90,7 +90,7 @@ function getBingImg() {
 }
 
 function eqheight() {
-    var h = $(".col-md-6").eq(0).height();
+    var h = $(".col-md-6").eq(0).outerHeight();
     $(".col-md-6").height(h + "px");
 }
 $(document).ready(function($) {

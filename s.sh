@@ -15,4 +15,3 @@ sed -i '31c \<h6>账号更新时间：'$time'</h6>' index.html
 git add index.html
 git commit -m "$time update"
 git push
-`"`'"'

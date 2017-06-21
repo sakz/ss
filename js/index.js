@@ -126,7 +126,7 @@ function newdomain() {
     setTimeout(function() {
         swal({
             title: "本站ss账号暂停几天，请到rightssr.xyz/code注册免费使用",
-            // text: "旧的地址已弃用",
+            text: "或者使用付费稳定服务kingss.win",
             // html: true,
             type: "success"
         });

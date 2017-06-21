@@ -130,7 +130,7 @@ function newdomain() {
             // html: true,
             type: "success"
         });
-    }, 500)
+    }, 1000)
 }
 window.onload = function() {
     // changeColor();

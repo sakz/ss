@@ -125,8 +125,8 @@ function freess() {
 function newdomain() {
     setTimeout(function() {
         swal({
-            title: "请记住本站的域名http://freessr.top",
-            text: "旧的地址已弃用",
+            title: "本站ss账号暂停几天，请到rightssr.xyz/code注册免费使用",
+            // text: "旧的地址已弃用",
             // html: true,
             type: "success"
         });
@@ -135,7 +135,7 @@ function newdomain() {
 window.onload = function() {
     // changeColor();
     // buyMsg();
-    // newdomain();
+    newdomain();
     // freess();
     // eqheight();
 };

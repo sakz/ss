@@ -135,7 +135,7 @@ function newdomain() {
 window.onload = function() {
     // changeColor();
     // buyMsg();
-    newdomain();
+    // newdomain();
     // freess();
     // eqheight();
 };

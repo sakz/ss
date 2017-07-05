@@ -125,8 +125,9 @@ function freess() {
 function newdomain() {
     setTimeout(function() {
         swal({
-            title: "本站ss账号暂停几天，请到rightssr.xyz/code注册免费使用",
-            text: "或者使用付费稳定服务kingss.win",
+            // title: "本站ss账号暂停几天，请到rightssr.xyz/code注册免费使用",
+            title:"http://kingss.win 提供低价稳定服务",
+            // text: "或者使用付费稳定服务kingss.win",
             // html: true,
             type: "success"
         });
@@ -135,7 +136,7 @@ function newdomain() {
 window.onload = function() {
     // changeColor();
     // buyMsg();
-    // newdomain();
+    newdomain();
     // freess();
     // eqheight();
 };

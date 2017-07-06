@@ -126,8 +126,9 @@ function newdomain() {
     setTimeout(function() {
         swal({
             // title: "本站ss账号暂停几天，请到rightssr.xyz/code注册免费使用",
-            title:"http://kingss.win 提供低价稳定服务",
+            title:"kingss.win 提供低价稳定服务",
             // text: "或者使用付费稳定服务kingss.win",
+            text:"http://rightssr.xyz/code 注册免费使用",
             // html: true,
             type: "success"
         });

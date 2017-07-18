@@ -122,7 +122,7 @@ function freess() {
     }, 3000)
 }
 
-function newdomain() {
+function notice() {
     setTimeout(function() {
         swal({
             // title: "本站ss账号暂停几天，请到rightssr.xyz/code注册免费使用",
@@ -137,7 +137,7 @@ function newdomain() {
 window.onload = function() {
     // changeColor();
     // buyMsg();
-    newdomain();
+    // notice();
     // freess();
     // eqheight();
 };

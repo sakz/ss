@@ -1,0 +1,973 @@
+<!DOCTYPE html><html>
+
+<head>
+<meta charset="utf-8">
+<title>shadowsocks配合SwitchyOmega科学上网</title>
+<style>
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAYcAA0AAAAACjQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABwAAAAca8vGTk9TLzIAAAFMAAAARAAAAFZG1VHVY21hcAAAAZAAAAA+AAABQgAP9AdjdnQgAAAB0AAAAAQAAAAEACICiGdhc3AAAAHUAAAACAAAAAj//wADZ2x5ZgAAAdwAAADRAAABEKyikaNoZWFkAAACsAAAAC0AAAA2AtXoA2hoZWEAAALgAAAAHAAAACQHngNFaG10eAAAAvwAAAAQAAAAEAwAACJsb2NhAAADDAAAAAoAAAAKALIAVG1heHAAAAMYAAAAHwAAACABEAB2bmFtZQAAAzgAAALBAAAFu3I9x/Nwb3N0AAAF/AAAAB0AAAAvaoFvbwAAAAEAAAAAzBdyYwAAAADP2IQvAAAAAM/bz7t4nGNgZGFgnMDAysDB1Ml0hoGBoR9CM75mMGLkYGBgYmBlZsAKAtJcUxgcPsR8iGF2+O/AEMPsznAYKMwIkgMA5REMOXicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChED+h5j//yEk/3KoSgZGNgYYk4GRCUgwMaACRoZhDwCs7QgGAAAAIgKIAAAAAf//AAJ4nHWMMQrCQBBF/0zWrCCIKUQsTDCL2EXMohYGSSmorScInsRGL2DOYJe0Ntp7BK+gJ1BxF1stZvjz/v8DRghQzEc4kIgKwiAppcA9LtzKLSkdNhKFY3HF4lK69ExKslx7Xa+vPRVS43G98vG1DnkDMIBUgFN0MDXflU8tbaZOUkXUH0+U27RoRpOIyCKjbMCVejwypzJJG4jIwb43rfl6wbwanocrJm9XFYfskuVC5K/TPyczNU7b84CXcbxks1Un6H6tLH9vf2LRnn8Ax7A5WQAAAHicY2BkYGAA4teL1+yI57f5ysDNwgAC529f0kOmWRiYVgEpDgYmEA8AUzEKsQAAAHicY2BkYGB2+O/AEMPCAAJAkpEBFbAAADgKAe0EAAAiAAAAAAQAAAAEAAAAAAAAKgAqACoAiAAAeJxjYGRgYGBhsGFgYgABEMkFhAwM/xn0QAIAD6YBhwB4nI1Ty07cMBS9QwKlQapQW3VXySvEqDCZGbGaHULiIQ1FKgjWMxknMfLEke2A+IJu+wntrt/QbVf9gG75jK577Lg8K1qQPCfnnnt8fX1NRC/pmjrk/zprC+8D7tBy9DHgBXoWfQ44Av8t4Bj4Z8CLtBL9CniJluPXASf0Lm4CXqFX8Q84dOLnMB17N4c7tBo1AS/Qi+hTwBH4rwHHwN8DXqQ30XXAS7QaLwSc0Gn8NuAVWou/gFmnjLrEaEh9GmDdDGgL3B4JsrRPDU2hTOiMSuJUIdKQQayiAth69r6akSSFqIJuA19TrzCIaY8sIoxyrNIrL//pw7A2iMygkX5vDj+G+kuoLdX4GlGK/8Lnlz6/h9MpmoO9rafrz7ILXEHHaAx95s9lsI7AHNMBWEZHULnfAXwG9/ZqdzLI08iuwRloXE8kfhXYAvE23+23DU3t626rbs8/8adv+9DWknsHp3E17oCf+Z48rvEQNZ78paYM38qfk3v/u3l3u3GXN2Dmvmvpf1Srwk3pB/VSsp512bA/GG5i2WJ7wu430yQ5K3nFGiOqgtmSB5pJVSizwaacmUZzZhXLlZTq8qGGFY2YcSkqbth6aW1tRmlaCFs2016m5qn36SbJrqosG4uMV4aP2PHBmB3tjtmgN2izkGQyLWprekbIntJFing32a5rKWCN/SdSoga45EJykyQ7asZvHQ8PTm6cslIpwyeyjbVltNikc2HTR7YKh9LBl9DADC0U/jLcBZDKrMhUBfQBvXRzLtFtjU9eNHKin0x5InTqb8lNpfKv1s1xHzTXRqgKzek/mb7nB8RZTCDhGEX3kK/8Q75AmUM/eLkfA+0Hi908Kx4eNsMgudg5GLdRD7a84npi+YxNr5i5KIbW5izXas7cHXIMAau1OueZhfj+cOcP3P8MNIWLyYOBuxL6DRylJ4cAAAB4nGNgYoAALjDJyIAOWMCiTIxMLDmZedkABtIBygAAAA==) format('woff');
+}
+
+body {
+  background-color: white;
+}
+
+.markdown-body {
+  min-width: 200px;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 20px;
+
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;;word-wrap: break-word; word-break: break-all;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px/1.4 Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code {
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .anchor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+.markdown-body .highlight {
+  background: #fff;
+}
+
+.markdown-body .highlight .mf,
+.markdown-body .highlight .mh,
+.markdown-body .highlight .mi,
+.markdown-body .highlight .mo,
+.markdown-body .highlight .il,
+.markdown-body .highlight .m {
+  color: #945277;
+}
+
+.markdown-body .highlight .s,
+.markdown-body .highlight .sb,
+.markdown-body .highlight .sc,
+.markdown-body .highlight .sd,
+.markdown-body .highlight .s2,
+.markdown-body .highlight .se,
+.markdown-body .highlight .sh,
+.markdown-body .highlight .si,
+.markdown-body .highlight .sx,
+.markdown-body .highlight .s1 {
+  color: #df5000;
+}
+
+.markdown-body .highlight .kc,
+.markdown-body .highlight .kd,
+.markdown-body .highlight .kn,
+.markdown-body .highlight .kp,
+.markdown-body .highlight .kr,
+.markdown-body .highlight .kt,
+.markdown-body .highlight .k,
+.markdown-body .highlight .o {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .kt {
+  color: #458;
+}
+
+.markdown-body .highlight .c,
+.markdown-body .highlight .cm,
+.markdown-body .highlight .c1 {
+  color: #998;
+  font-style: italic;
+}
+
+.markdown-body .highlight .cp,
+.markdown-body .highlight .cs {
+  color: #999;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .cs {
+  font-style: italic;
+}
+
+.markdown-body .highlight .n {
+  color: #333;
+}
+
+.markdown-body .highlight .na,
+.markdown-body .highlight .nv,
+.markdown-body .highlight .vc,
+.markdown-body .highlight .vg,
+.markdown-body .highlight .vi {
+  color: #008080;
+}
+
+.markdown-body .highlight .nb {
+  color: #0086B3;
+}
+
+.markdown-body .highlight .nc {
+  color: #458;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .no {
+  color: #094e99;
+}
+
+.markdown-body .highlight .ni {
+  color: #800080;
+}
+
+.markdown-body .highlight .ne {
+  color: #990000;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .nf {
+  color: #945277;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .nn {
+  color: #555;
+}
+
+.markdown-body .highlight .nt {
+  color: #000080;
+}
+
+.markdown-body .highlight .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+
+.markdown-body .highlight .gd {
+  color: #000;
+  background-color: #fdd;
+}
+
+.markdown-body .highlight .gd .x {
+  color: #000;
+  background-color: #faa;
+}
+
+.markdown-body .highlight .ge {
+  font-style: italic;
+}
+
+.markdown-body .highlight .gr {
+  color: #aa0000;
+}
+
+.markdown-body .highlight .gh {
+  color: #999;
+}
+
+.markdown-body .highlight .gi {
+  color: #000;
+  background-color: #dfd;
+}
+
+.markdown-body .highlight .gi .x {
+  color: #000;
+  background-color: #afa;
+}
+
+.markdown-body .highlight .go {
+  color: #888;
+}
+
+.markdown-body .highlight .gp {
+  color: #555;
+}
+
+.markdown-body .highlight .gs {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .gu {
+  color: #800080;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .gt {
+  color: #aa0000;
+}
+
+.markdown-body .highlight .ow {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .w {
+  color: #bbb;
+}
+
+.markdown-body .highlight .sr {
+  color: #017936;
+}
+
+.markdown-body .highlight .ss {
+  color: #8b467f;
+}
+
+.markdown-body .highlight .bp {
+  color: #999;
+}
+
+.markdown-body .highlight .gc {
+  color: #999;
+  background-color: #EAF2F5;
+}
+
+.markdown-body .octicon {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  float: left;
+  margin: 0.3em 0 0.25em -1.6em;
+  vertical-align: middle;
+}
+
+/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #f8f8f8;
+  -webkit-text-size-adjust: none;
+}
+
+.hljs-comment,
+.diff .hljs-header {
+  color: #998;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.css .rule .hljs-keyword,
+.hljs-winutils,
+.nginx .hljs-title,
+.hljs-subst,
+.hljs-request,
+.hljs-status {
+  color: #333;
+  font-weight: bold;
+}
+
+.hljs-number,
+.hljs-hexcolor,
+.ruby .hljs-constant {
+  color: #008080;
+}
+
+.hljs-string,
+.hljs-tag .hljs-value,
+.hljs-doctag,
+.tex .hljs-formula {
+  color: #d14;
+}
+
+.hljs-title,
+.hljs-id,
+.scss .hljs-preprocessor {
+  color: #900;
+  font-weight: bold;
+}
+
+.hljs-list .hljs-keyword,
+.hljs-subst {
+  font-weight: normal;
+}
+
+.hljs-class .hljs-title,
+.hljs-type,
+.vhdl .hljs-literal,
+.tex .hljs-command {
+  color: #458;
+  font-weight: bold;
+}
+
+.hljs-tag,
+.hljs-tag .hljs-title,
+.hljs-rule .hljs-property,
+.django .hljs-tag .hljs-keyword {
+  color: #000080;
+  font-weight: normal;
+}
+
+.hljs-attribute,
+.hljs-variable,
+.lisp .hljs-body,
+.hljs-name {
+  color: #008080;
+}
+
+.hljs-regexp {
+  color: #009926;
+}
+
+.hljs-symbol,
+.ruby .hljs-symbol .hljs-string,
+.lisp .hljs-keyword,
+.clojure .hljs-keyword,
+.scheme .hljs-keyword,
+.tex .hljs-special,
+.hljs-prompt {
+  color: #990073;
+}
+
+.hljs-built_in {
+  color: #0086b3;
+}
+
+.hljs-preprocessor,
+.hljs-pragma,
+.hljs-pi,
+.hljs-doctype,
+.hljs-shebang,
+.hljs-cdata {
+  color: #999;
+  font-weight: bold;
+}
+
+.hljs-deletion {
+  background: #fdd;
+}
+
+.hljs-addition {
+  background: #dfd;
+}
+
+.diff .hljs-change {
+  background: #0086b3;
+}
+
+.hljs-chunk {
+  color: #aaa;
+}
+
+
+</style>
+
+<style> @media print{ .hljs{overflow: visible; word-wrap: break-word !important;} }</style></head><body><div class="markdown-body">
+<h1>shadowsocks配合SwitchyOmega科学上网</h1>
+
+
+
+<h3 id="toc_0">1.shadowsocks客户端的基本使用</h3>
+
+<h4 id="toc_1">主要步骤:</h4>
+
+<p><strong>1</strong>.   <strong>下载客户端，各平台的客户端都有，windows,linux,mac,android,ios。</strong><br/>
+<strong>    <a href="https://pan.baidu.com/s/1geBdTeF">shadowsocks各平台客户端下载地址</a></strong><br/>
+<strong>2</strong>.   <strong>输入ss账号信息（也可以直接扫屏幕上的二维码账号）,选择服务器。</strong><br/>
+    免费ss账号网站：<br/>
+1.<a href="http://freessr.cf/">http://freessr.cf/</a><br/>
+2.<a href="http://kingss.win/">http://kingss.win/</a>    (提供稳定低价SS服务20￥一年)</p>
+
+<p><strong>3</strong>.  ** <code>启用系统代理</code>，代理模式选择<code>pac模式</code>（这个模式就是<code>自动代理模式</code>，就是根据pac规则自动识别网站是否被墙而选择是否经过代理，这个模式的好处是访问国内网站不经过代理，不会影响速度）如果<code>pac模式</code>下有些被墙的网站还是不能访问，可以启用全局代理，即访问所有网址都会通过代理。**<br/>
+&lt;!--more--&gt;</p>
+
+<h5 id="toc_2">以windows系统为例，其他系统类似：</h5>
+
+<p>1.双击打开后，如下图，设置代理服务器的信息</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/456470-f4a502592407829c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1"/></p>
+
+<p>2.启用代理</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/456470-9355d7b5e201df3b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2"/><br/>
+完成以上步骤已经<strong>能科学上网</strong>了,嫌麻烦可以不用看下去了，下面是进阶教程。</p>
+
+<hr/>
+
+<p>但是问题来了，如果我访问的某个国外网址被墙了，但是pac代理规则里没有，那么这时只能在ss客户端切换到全局模式，这样毕竟有点麻烦，用过红杏都知道它可以很方便决定某个网址是否经过代理，那么ss能不能做到呢，请看下面的部分。</p>
+
+<hr/>
+
+<h3 id="toc_3">2.shadowsocks配合SwitchyOmega科学上网</h3>
+
+<p>SwitchyOmega是chrome下非常好用的代理管理插件。<br/>
+<a href="http://pan.baidu.com/s/1pJosoKr">SwitchyOmega插件下载地址</a>,<code>.crx</code>是插件，<code>.bak</code>是备份文件<br/>
+1.在chrome下安装SwitchyOmega插件。<br/>
+PS:其实搜狗浏览器，UC浏览器，360极速浏览器也是可以使用这个插件的</p>
+
+<p><strong>步骤：</strong>打开chrome的设置&gt;扩展程序，然后把插件拖进来就行了。(新版本的在更多工具&gt;扩展程序)<br/>
+<img src="http://upload-images.jianshu.io/upload_images/456470-4904bd9963b1c140.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1.png"/></p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/456470-f60c49c7687db970.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2.png"/></p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/456470-9624c96b3cd77ac2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="3"/><br/>
+2.设置SwitchyOmega。<br/>
+直接导入我设置好的配置文件。<br/>
+<img src="http://upload-images.jianshu.io/upload_images/456470-9f3b8ceea4b738f9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2x.png"/><br/>
+3.使用SwitchyOmega<br/>
+下图中的<code>auto switch</code>相当于ss客户端的PAC模式,<code>shadowsocks</code>相当于全局模式。<br/>
+下图就是通过<code>auto switch</code>访问谷歌。<br/>
+<img src="http://upload-images.jianshu.io/upload_images/456470-9e4286ab9c902a41.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2x.png"/></p>
+
+<h2 id="toc_4">重点来了，就是如何把想要通过代理的网址加入到代理列表，有2种方法。</h2>
+
+<h5 id="toc_5">方法1：</h5>
+
+<p>下图1就是在<code>auto switch</code>模式下，点击那个插件的图标，点击那个网址，这里以<code>github.com</code>为例，然后点击<code>shadowsocks</code>就把当前网址加入到shadowsocks代理中，想不经过代理就选择<code>直接连接</code>。用<code>ip.cn</code>这个网址试的话，经过代理和不经过代理的显示地址不一样的，自行尝试。上述方式只是单次起作用，下次打开浏览器又做上述步骤，永久加入代理规则看方法2。<br/>
+<img src="http://upload-images.jianshu.io/upload_images/456470-dc728b08e9ab32a7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图1"/></p>
+
+<h5 id="toc_6">方法2：</h5>
+
+<p>在<code>auto switch</code>模式下，点击那个插件的图标，点击那个网址，这里以<code>ip.cn</code>为例，要永久加入代理规则可以点击<code>添加条件</code>，选择<code>shadowsocks</code>就行了，看图2，代理服务器在新加坡，所以就显示新加坡。</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/456470-07b1e80ef6cdb867.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图2"/></p>
+
+<blockquote>
+<h3 id="toc_7">2016.8.8更新：</h3>
+
+<p> 使用 Shadowsocks 的用户<strong>如果</strong>遇到 <code>Chrome + Windows 10</code> 环境下 SOCKS5 不稳定的问题， <strong>请在代理设置中把SOCK5换成 HTTP 代理协议。</strong> 如下图<br/>
+<img src="http://upload-images.jianshu.io/upload_images/456470-f902135accd6192e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""/>原因已经确定，是迅雷组件修改系统连接参数所致，卸载迅雷并重启也能修复。此问题与 SwitchyOmega 无关，其他代理设置软件或者手动设置代理也会导致 Chrome 发生此问题。<a href="https://github.com/FelisCatus/SwitchyOmega/issues/557">参考来源</a></p>
+</blockquote>
+
+<p>Mac平台没问题用原来的sock5就行。</p>
+
+<hr/>
+
+<h3 id="toc_8">拓展1:</h3>
+
+<h5 id="toc_9">手动配置SwitchyOmega方法：</h5>
+
+<p>这部分有兴趣可以看下，上面的bak文件就是根据这里的设置生成的。<br/>
+<img src="http://upload-images.jianshu.io/upload_images/456470-cebde14c7c439682.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1.png"/></p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/456470-075384f39367e495.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2.png"/></p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/456470-68101805db910f06.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="3.png"/></p>
+
+<p>规则列表网址:<br/>
+<code>https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt</code></p>
+
+<hr/>
+
+<h3 id="toc_10">拓展2:</h3>
+
+<p>**1、Shadowsocks 是什么<br><br/>
+**Shadowsocks 是一种安全的 socks5 代理，可以保护你的上网流量。基于多种加密方式，推荐使用 aes-256-cfb 加密。安装和使用需要本地端和服务端。本地客户端已经包含了多种版本，包括iOS，Android，Windows，MAC，甚至是路由器 (基于OpenWRT)，所以使用方便，各取所需。远程服务端则一般安装在基于 Linux 的各种发行版操作系统，比如 Debian， CentOS， Fedora， Redhat， Ubuntu， openSUSE等。<br/>
+**2、Shadowsocks 的作者是谁<br><br/>
+**最初只有 Python 版，由 <a href="https://github.com/clowwindy">@clowwindy</a> 开发和维护，后来随着知名度提高，开始出现各种语言的版本，其中比较知名的是 libev ， go， nodejs 等版本，需要注意的是，nodejs 的作者也是 @clowwindy，但最近已不再维护该版本。libev 的维护者是<a href="https://github.com/madeye">@madeye</a>，长期更新。<br/>
+** 3、火狐上类似的插件是<code> AutoProxy</code><br><br/>
+**由于 <code>AutoProxy</code> 的作者没有更新，新的版本无法在 <code>Firefox 27.0</code>以后进行代理规则设置，所以我们用 xthunder 作者 的修复版，下载链接<a href="http://fxthunder.com/files/autoproxy.xpi">http://fxthunder.com/files/autoproxy.xpi</a><br/>
+如果您无法访问，也可以摸这个链接：<br/>
+<a href="http://pan.baidu.com/s/1F6k7G">http://pan.baidu.com/s/1F6k7G</a><br/>
+下载好这个 <code>.xpi</code>文件后，直接拖入任何 Firefox 窗口，然后安装重启浏览器即可，设置类似SwitchyOmega，就不多说了。</p>
+
+<h3 id="toc_11">拓展3:</h3>
+
+<p>Shadowsocks原理<br/>
+简单理解的话，Shadowsocks是将以前通过SSH创建的Socks5协议拆开成Server端和client端，下面这个原理图能简单介绍其翻墙原理，基本上和利用SSH tunnel大致类似：<br/>
+<img src="http://upload-images.jianshu.io/upload_images/456470-c360ea145203c532.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""/><br/>
+PC客户端（即你的电脑）发出请求基于Socks5协议跟SS-Local端进行通讯，由于这个SS-Local一般是本机或路由器等局域网的其他机器，不经过GFW，所以解决GFW通过特征分析进行干扰的问题。<br/>
+SS-Local和SS-Server两端通过多种可选的加密方法进行通讯，经过GFW的时候因为是常规的TCP包，没有明显特征码GFW也无法对通讯数据进行解密，因此通讯放行。<br/>
+SS-Server将收到的加密数据进行解密，还原初始请求，再发送到用户需要访问的服务网站，获取响应原路再返回SS-04，返回途中依然使用了加密，使得流量是普通TCP包，并成功穿过GFW防火墙。<br/>
+因此，Shadowsocks的优点在于它解决了GFW通过分析流量特征从而干扰的问题，这是它优于SSH和VPN翻墙的地方。</p>
+
+<p>1.其他平台的使用方法:<br/>
+- 1.所有平台客户端下载  <a href="https://pan.baidu.com/s/1geBdTeF">https://pan.baidu.com/s/1geBdTeF</a></p>
+
+<ul>
+<li><p>2.Windows、Mac使用教程 <a href="http://t.cn/R6t7HkG">http://t.cn/R6t7HkG</a></p></li>
+<li><p>3.IOS平台使用教程  <a href="http://t.cn/R6tzeeQ">http://t.cn/R6tzeeQ</a></p></li>
+<li><p>4.安卓平台使用教程 <a href="http://t.cn/RcyNGBm">http://t.cn/RcyNGBm</a></p></li>
+<li><p>5.Linux平台使用教程 <a href="http://t.cn/R6tZZgz">http://t.cn/R6tZZgz</a></p></li>
+</ul>
+
+<p>2.其他：<a href="http://t.cn/RUn8Hgy">http://t.cn/RUn8Hgy</a></p>
+
+</div></body>
+
+</html>

@@ -2,8 +2,8 @@
 cd /etc/shadowsocks
 a=$RANDOM
 b=`expr $a \* $191`
-sed -i '/"2017.*,$/d' config.json
-sed -i '2a \"2017":"'${b}'",' config.json
+sed -i '/"138.*,$/d' config.json
+sed -i '2a \"138":"'${b}'",' config.json
 /etc/init.d/shadowsocks restart
 cd ~
 cd ss

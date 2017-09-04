@@ -1,9 +1,9 @@
 #!/bin/bash
-cd /etc/shadowsocks
+cd /etc
 a=$RANDOM
 b=`expr $a \* $191`
-sed -i '/"138.*,$/d' config.json
-sed -i '2a \"138":"'${b}'",' config.json
+sed -i '/"138.*,$/d' shadowsocks.json
+sed -i '2a \"138":"'${b}'",' shadowsocks.json
 /etc/init.d/shadowsocks restart
 cd ~
 cd ss

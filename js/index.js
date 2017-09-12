@@ -137,7 +137,7 @@ function notice() {
 window.onload = function() {
     // changeColor();
     // buyMsg();
-    // notice();
+    notice();
     // freess();
     // eqheight();
 };

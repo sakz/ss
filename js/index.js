@@ -126,9 +126,9 @@ function notice() {
     setTimeout(function() {
         swal({
             // title: "本站ss账号暂停几天，请到rightssr.xyz/code注册免费使用",
-            title:"kingss.win 提供低价稳定服务",
+            title:"建议点击右下角注册使用",
             // text: "或者使用付费稳定服务kingss.win",
-            text:"http://rightssr.xyz/code 注册免费使用",
+            text:"由于本站账号被滥用，提高了更新密码频率，建议注册使用",
             // html: true,
             type: "success"
         });

@@ -2,8 +2,8 @@
 cd /etc
 a=$RANDOM
 b=`expr $a \* $191`
-sed -i '/"138.*,$/d' shadowsocks.json
-sed -i '2a \"138":"'${b}'",' shadowsocks.json
+sed -i '/"148.*,$/d' shadowsocks.json
+sed -i '2a \"148":"'${b}'",' shadowsocks.json
 /etc/init.d/shadowsocks restart
 cd ~
 cd ss

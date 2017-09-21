@@ -3,8 +3,7 @@ function buyMsg() {
     buy.style.color = "red";
     buy.onclick = function() {
         swal({
-            title: "需要购买稳定ss<br>联系me@fazero.cc <br>美国节点 20元一年",
-            // text: "需要购买稳定ss<br>联系me@fazero.cc <br>美国节点 20元一年",
+            title: "需要",
             html: true,
             type: "success"
         });
@@ -114,8 +113,8 @@ function downImg() {
 function freess() {
     setTimeout(function() {
         swal({
-            title: "吾皇SS提供稳定低价SS服务<br>地址：http://kingss.win",
-            text: "请记住本站的域名http://freessr.top，旧的地址已弃用",
+            title: "hello",
+            text: "旧的地址已弃用",
             html: true,
             type: "success"
         });
@@ -127,7 +126,7 @@ function notice() {
         swal({
             // title: "本站ss账号暂停几天，请到rightssr.xyz/code注册免费使用",
             title:"建议点击右下角注册使用",
-            // text: "或者使用付费稳定服务kingss.win",
+            // text: "或者使用付费稳定服务",
             text:"由于本站账号被滥用，提高了更新密码频率，建议注册使用",
             // html: true,
             type: "success"
@@ -137,7 +136,7 @@ function notice() {
 window.onload = function() {
     // changeColor();
     // buyMsg();
-    notice();
+    // notice();
     // freess();
     // eqheight();
 };

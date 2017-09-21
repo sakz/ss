@@ -93,7 +93,7 @@ function eqheight() {
     $(".col-md-6").height(h + "px");
 }
 $(document).ready(function($) {
-    showtime();
+    // showtime();
     getBingImg();
     var qr = document.getElementsByClassName('show-qr');
     for (var i = 0; i < qr.length; i++) {
@@ -124,9 +124,7 @@ function freess() {
 function notice() {
     setTimeout(function() {
         swal({
-            // title: "本站ss账号暂停几天，请到rightssr.xyz/code注册免费使用",
             title:"建议点击右下角注册使用",
-            // text: "或者使用付费稳定服务",
             text:"由于本站账号被滥用，提高了更新密码频率，建议注册使用",
             // html: true,
             type: "success"

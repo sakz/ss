@@ -94,7 +94,8 @@ function eqheight() {
 }
 $(document).ready(function($) {
     // showtime();
-    getBingImg();
+    changeBg();
+    // getBingImg();
     var qr = document.getElementsByClassName('show-qr');
     for (var i = 0; i < qr.length; i++) {
         qr[i].onclick = showqr;

@@ -82,7 +82,7 @@ function getBingImg() {
             console.log("加载好了");
             changeColor();
             // buyMsg();
-            tips();
+            // tips();
             // downImg();
         }
         // });
@@ -138,4 +138,5 @@ window.onload = function() {
     // notice();
     // freess();
     // eqheight();
+    tips();
 };

@@ -31,7 +31,8 @@ function changeColor() {
 }
 
 function changeBg() {
-    document.body.style.backgroundImage = "url(" + "https://cn.bing.com/az/hprichbg/rb/TeRewaRewa_ZH-CN9356115127_1920x1080.jpg" + ")";
+    document.body.style.backgroundImage = "url(" + "https://cn.bing.com/az/hprichbg/rb/RomanTheatre_ZH-CN9417897135_1920x1080.jpg" + ")";
+    // document.body.style.backgroundImage = "url(" + "https://cn.bing.com/az/hprichbg/rb/TeRewaRewa_ZH-CN9356115127_1920x1080.jpg" + ")";
     // document.body.style.backgroundImage = "url(" + "https://source.unsplash.com/category/nature/1920x1080" + ")";
     document.body.style.backgroundSize = "cover";
 }

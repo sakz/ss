@@ -70,10 +70,10 @@ function showqr() {
 }
 
 function getBingImg() {
-    // $.get('https://jsonp.afeld.me/?url=http%3A%2F%2Fcn.bing.com%2FHPImageArchive.aspx%3Fformat%3Djs%26idx%3D0%26n%3D1', function(data) {
-    // var a = data.images[0].url;
+    $.get('https://jsonp.afeld.me/?url=http%3A%2F%2Fcn.bing.com%2FHPImageArchive.aspx%3Fformat%3Djs%26idx%3D0%26n%3D1', function(data) {
+    var a = data.images[0].url;
     // var a = "http://img.ph.126.net/09Bqwm15SmWv4-B6Avxo4Q==/5629512728352671413.png";
-    var a = 'https://ww2.sinaimg.cn/large/8b953c4agw1f5dj77i1i6j21hc0u0q50.jpg';
+    // var a = 'https://ww2.sinaimg.cn/large/8b953c4agw1f5dj77i1i6j21hc0u0q50.jpg';
     document.body.style.backgroundImage = "url(" + a + ")";
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundPosition = "center";
@@ -87,7 +87,7 @@ function getBingImg() {
             // tips();
             // downImg();
         }
-        // });
+    });
 }
 
 function eqheight() {
@@ -96,8 +96,8 @@ function eqheight() {
 }
 $(document).ready(function($) {
     // showtime();
-    changeBg();
-    // getBingImg();
+    // changeBg();
+    getBingImg();
     var qr = document.getElementsByClassName('show-qr');
     for (var i = 0; i < qr.length; i++) {
         qr[i].onclick = showqr;

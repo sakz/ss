@@ -3,14 +3,14 @@ function buyMsg() {
     buy.style.color = "red";
     buy.onclick = function() {
         swal({
-            title: "需要购买稳定ss<br>联系me@fazero.cc <br>美国节点 20元一年",
-            // text: "需要购买稳定ss<br>联系me@fazero.cc <br>美国节点 20元一年",
+            title: "需要",
             html: true,
             type: "success"
-            });
+        });
 
     }
 }
+
 function tips() {
     $(".tips").click(function() {
         swal({
@@ -22,6 +22,7 @@ function tips() {
     })
     console.log('使用须知');
 }
+
 function changeColor() {
     $('.title h6 a').css({
         color: "#fff",
@@ -30,7 +31,8 @@ function changeColor() {
 }
 
 function changeBg() {
-    document.body.style.backgroundImage = "url(" + "https://source.unsplash.com/category/nature/1920x1080" + ")";
+    document.body.style.backgroundImage = "url(" + "https://cn.bing.com/az/hprichbg/rb/TeRewaRewa_ZH-CN9356115127_1920x1080.jpg" + ")";
+    // document.body.style.backgroundImage = "url(" + "https://source.unsplash.com/category/nature/1920x1080" + ")";
     document.body.style.backgroundSize = "cover";
 }
 
@@ -67,63 +69,75 @@ function showqr() {
 }
 
 function getBingImg() {
-    // $.get('https://jsonp.afeld.me/?url=http%3A%2F%2Fcn.bing.com%2FHPImageArchive.aspx%3Fformat%3Djs%26idx%3D0%26n%3D1', function(data) {
-        // var a = data.images[0].url;
-        // var a = "http://img.ph.126.net/09Bqwm15SmWv4-B6Avxo4Q==/5629512728352671413.png";
-        var a = 'http://ww2.sinaimg.cn/large/8b953c4agw1f5dj77i1i6j21hc0u0q50.jpg';
-        document.body.style.backgroundImage = "url(" + a + ")";
-        document.body.style.backgroundSize = "cover";
-        document.body.style.backgroundPosition = "center";
+    $.get('https://jsonp.afeld.me/?url=http%3A%2F%2Fcn.bing.com%2FHPImageArchive.aspx%3Fformat%3Djs%26idx%3D0%26n%3D1', function(data) {
+    var a = data.images[0].url;
+    // var a = "http://img.ph.126.net/09Bqwm15SmWv4-B6Avxo4Q==/5629512728352671413.png";
+    // var a = 'https://ww2.sinaimg.cn/large/8b953c4agw1f5dj77i1i6j21hc0u0q50.jpg';
+    document.body.style.backgroundImage = "url(" + a + ")";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
 
-        var img = new Image();
-        img.src = a;
-        img.onload = function() {
+    var img = new Image();
+    img.src = a;
+    img.onload = function() {
             console.log("加载好了");
             changeColor();
             // buyMsg();
-            tips();
+            // tips();
             // downImg();
         }
-    // });
+    });
+}
+
+function eqheight() {
+    var h = $(".col-md-6").eq(0).outerHeight();
+    $(".col-md-6").height(h + "px");
 }
 $(document).ready(function($) {
-    showtime();
-    getBingImg();
+    // showtime();
+    changeBg();
+    // getBingImg();
     var qr = document.getElementsByClassName('show-qr');
     for (var i = 0; i < qr.length; i++) {
         qr[i].onclick = showqr;
     }
+    eqheight();
 });
-function downImg(){
+
+function downImg() {
     var img = document.body.style.backgroundImage;
     var re = /http.*jpg/;
     var imgurl = re.exec(img)[0];
-    var href = $('.tips a').attr('href',imgurl);
-    var down = $('.tips a').attr('download',imgurl);
+    var href = $('.tips a').attr('href', imgurl);
+    var down = $('.tips a').attr('download', imgurl);
 }
-function freess(){
-    setTimeout(function(){
+
+function freess() {
+    setTimeout(function() {
         swal({
-            title: "吾皇SS提供稳定低价SS服务<br>地址：http://kingss.win",
-            text: "请记住本站的域名http://freessr.top，旧的地址已弃用",
+            title: "hello",
+            text: "旧的地址已弃用",
             html: true,
             type: "success"
         });
-    },3000)
+    }, 3000)
 }
-function newdomain(){
-    setTimeout(function(){
+
+function notice() {
+    setTimeout(function() {
         swal({
-            title: "请记住本站的域名http://freessr.top",
-            text: "旧的地址已弃用",
+            title:"建议点击右下角注册使用",
+            text:"由于本站账号被滥用，提高了更新密码频率，建议注册使用",
             // html: true,
             type: "success"
         });
-    },500)
+    }, 1000)
 }
 window.onload = function() {
     // changeColor();
     // buyMsg();
-    // newdomain();
+    // notice();
     // freess();
+    // eqheight();
+    tips();
 };

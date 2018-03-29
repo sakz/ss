@@ -1,0 +1,10 @@
+{
+    "port_password":{
+	     "148":"1550731",
+	     "10000":"fazero",
+	     "19806":"saber.pub"                   
+    },
+	    "method":"aes-256-cfb",
+	    "timeout":600
+
+}
